@@ -1,0 +1,174 @@
+*{
+    box-sizing: border-box;
+    margin:0; 
+    padding: 0; 
+}
+:root{
+    --ltModebgColor: #adefd1ff; 
+    --ltModefgColor: #00203fff; 
+    --drkModebgColor: #2D2926FF; 
+    --drkModefgColor:#E94B3CFF; 
+}
+
+/* Light mode background color is Mint-'#adefd1ff' and foreground color is Salor blue-'#00203fff' */
+/* dark Mode bg color is Black-#2D2926FF and fgcolor-#E94B3CFF */
+html{
+    background-color: #adefd1ff;
+    color: #00203fff; 
+    scroll-behavior: smooth;
+}
+@media (prefers-color-scheme: dark){
+    .html{
+        background-color: var(--drkModebgColor);
+        color: var(--drkModefgColor); 
+    }
+}
+.Heading{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.Heading>h1{
+    font-family: 'Cinzel Decorative',cursive;
+    font-size: 9vw; 
+    color: inherit;
+    
+}
+.game-Settings{
+    width: 95%;
+    margin: auto;
+    padding: 0.5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+#gSh1WrapDiv{
+    padding: 0.2vh;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+#gSh1WrapDiv>h1{
+    font-family: 'Roboto Condensed',sans-serif;
+    font-size: 6vw;
+    color: var(--ltModefgColor);
+}
+#formWrapDiv{
+    width: 100%;
+    padding: 0.5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+}
+#playerDeets{
+    width: 100%; 
+}
+#plnameWrapDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 3vh;
+}
+#plnameWrapDiv>label{
+    flex-grow: 1;
+}
+#plnameWrapDiv>input{
+    flex-grow: 1;
+}
+#nRowsnColumnsWrapDiv{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    margin: 5vh 0.2vw 5vh 0.2vw; 
+}
+#nRowsWrapDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+#nColumnsWrapDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+#warnAreaWrapDiv{
+    display: flex;
+    flex: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2vh;
+}
+#warnArea{
+    padding: 0.1vh;
+    margin: auto;
+    font-family: 'Space Mono',monospace;
+    font-size: 2vw;
+    background-color: var(--ltModebgColor);
+    color: red;
+    border-radius: 0.3vw;
+}
+#startGameButtonWrapDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 2vh 0.1vw 2vh 0.1vw; 
+}
+#startGameButton{
+    background-color: #caf250;
+    color: red;
+    width: 40vw;
+    height: 10vw;
+    font-family: 'Cinzel Decorative',cursive;
+    font-size: 6vw;
+    border-radius: 3vw;
+}
+.lbl{
+    font-family: cursive;
+    font-size: 3.5vw;
+}
+/*#playerDeets input{
+    width: 35vw;
+    height: 3vw;
+    border: 0.1vw solid black;
+    border-radius: 0.2vw;
+}
+#playerDeets input:hover{
+    border: 0.1vw solid white;
+}*/
+#nRows,#nColumns{
+    width: 40vw;
+    height: 4vw;
+    border: 0.1vw solid black;
+    border-radius: 1vw;
+    font-family: 'Edu SA Beginner',cursive;
+    font-size: 2.5vw;
+    text-align: center;
+}
+#playerName{
+    height: 4vw;
+    border: 0.1vw solid black;
+    border-radius: 1vw;
+    font-family: 'Edu SA Beginner',cursive;
+    font-size: 2.5vw;
+    text-align: center;
+}
+
+/* Styling for table that will serve as the gameboard */
+.gameBoardWrapDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin:auto; 
+    padding: 0.5vh; 
+}

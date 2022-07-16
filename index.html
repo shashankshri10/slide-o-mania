@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Cinzel+Decorative&family=Edu+SA+Beginner&family=IM+Fell+English+SC&family=Lobster+Two&family=Merienda+One&family=Monoton&family=Press+Start+2P&family=Roboto+Condensed:ital@0;1&family=Rubik+Mono+One&family=Space+Mono&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+    <div class="Heading"><h1 align="center">
+        Slide'O'Mania
+    </h1></div>
+    <div class="game-Settings">
+        <div id="gSh1WrapDiv">
+            <h1>Enter Game Settings</h1>
+        </div>
+        <div id="formWrapDiv">
+            
+            <div id="playerDeets">
+                <div id="plnameWrapDiv">
+                    <label for="playerName" class="lbl" align="center">Player Name:</label>
+                    <input type="text" id="playerName" name="playerName"required>
+                </div>
+                <div id="nRowsnColumnsWrapDiv">
+                    <div id="nRowsWrapDiv">
+                        <label for="nRows" class="lbl" align="center">Num Rows</label>
+                        <input type="number" name="numRows" id="nRows" min="2" max="12" step="1" required>
+                    </div>
+                    <div class="lbl">X</div>
+                    <div id="nColumnsWrapDiv">
+                        <label for="nColumns" class="lbl" align="center">Num Columns</label>
+                        <input type="number" name="numColumns" id="nColumns" min="2" max="12" step="1" required>
+                    </div>
+                </div>
+                <div id="warnAreaWrapDiv">
+                    <div id="warnArea"><br></div>
+                </div>
+                <div id="startGameButtonWrapDiv">
+                    <button type="submit" id="startGameButton">Start Game</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="gameBoardWrapDiv" id="gBWD"></div>
+    <div class="resultScreen"></div>
+</body>
+</html>
