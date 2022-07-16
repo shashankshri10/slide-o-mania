@@ -1,6 +1,9 @@
 let gameArr=new Array(20); //game Arr is 2d array that stores position of the nubers and blank during game runtime
 for (let x=0;x<20;x++){gameArr[x]=new Array(20);}
 
+let winArr=new Array(20); 
+for (let oz=0;oz<20;oz++){winArr[oz]=new Array(20);}
+
 let totalRows=0,totalCols=0; 
 
 let ifSolvable=""; 
@@ -25,6 +28,7 @@ function subDeets(){
         //insert code to pass data to gameBoard obj
         let newGame=new gameBoard(nRVal,nCVal);
         newGame.arrGenerator(); 
+        newGame.winArrgenerator(); 
         newGame.drawBoard();  
         //after board is drawn button is disabled, that will be added inside event listener itself
 
@@ -129,7 +133,14 @@ class gameBoard{
                             document.getElementById(`tblCell${y}${z}`).firstChild.src=createimgUsingCanvas(gameArr[y][z],null,sqSide);
                         }
                     }
-                    
+                    let winStat=winGameCheck(); 
+                    if (winStat){
+                        let resScreenWrapDiv=document.getElementById('resScreenWrapDiv');
+                        let winGIF=document.createElement('img'); 
+                        winGIF.setAttribute('src','winGame.gif'); 
+                        resScreenWrapDiv.appendChild(winGIF);  
+                    }
+                    else{}
                 });
             }
             gmB.appendChild(tblR[i]); 
@@ -183,12 +194,14 @@ class gameBoard{
             }
         }
     }
-    checkWin(){
-        let numRows=this.r; 
-        let numCols=this.c; 
-        let winStat=false; 
-
-        //
+    
+    winArrgenerator(){
+        for (let i=0;i<this.r;i++){
+            for (let j=0;j<this.c;j++){
+                winArr[i][j]=(i*this.c)+j+1; 
+            }
+        }
+        winArr[this.r-1][this.c-1]=null; 
     }
 }
 
@@ -383,3 +396,19 @@ function shift(p,q,dir) //shifts gameArr[p][q] in given direction
         return true; 
     }
 } 
+
+function winGameCheck(){
+    let winStat=true;
+    for (let i=0;i<totalRows;i++)
+    {
+        for (let j=0;j<totalCols;j++)
+        {
+            if (gameArr[i][j]!==winArr[i][j])
+            {
+                winStat=false; 
+                break;
+            }
+        }
+    }
+    return winStat; 
+}
