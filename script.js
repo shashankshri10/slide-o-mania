@@ -378,7 +378,8 @@ function shift(p,q,dir) //shifts gameArr[p][q] in given direction
     else {
         let temp = gameArr[moveResult[0]][moveResult[1]]; 
         gameArr[moveResult[0]][moveResult[1]]=gameArr[p][q]; 
-        gameArr[p][q]=gameArr[moveResult[0]][moveResult[1]]; 
+        gameArr[p][q]=temp; 
+        
         return true; 
     }
 } 
